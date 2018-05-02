@@ -23,9 +23,14 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
- $app->withFacades();
+$app->withFacades();
 
- $app->withEloquent();
+$app->withEloquent();
+
+$app->configure('cors');
+
+$app->register(Barryvdh\Cors\ServiceProvider::class);
+
 
 /*
 |--------------------------------------------------------------------------

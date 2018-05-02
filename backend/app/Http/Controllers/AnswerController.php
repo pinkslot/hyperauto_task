@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class AnswerController extends Controller
 {
 //    probably should use Gate facade as described here https://lumen.laravel.com/docs/5.6/authorization
-    private function canDeleteUpdate(Question $model) {
+    private function canDeleteUpdate(Answer $model) {
         if (Auth::user()->api_key != $model->user_token) {
             abort(403, 'Access denied');
         }
